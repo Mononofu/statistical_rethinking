@@ -1,0 +1,3 @@
+Implementations of the examples from [Statistical Rethinking](https://xcelab.net/rm/statistical-rethinking/) (2nd ed) using [Polars](https://github.com/pola-rs/polars) and [NumPyro](https://github.com/pyro-ppl/numpyro), based on the [implementations by fehiepsi](https://github.com/fehiepsi/rethinking-numpyro).
+
+The primary purpose of this repo is for me to play with Polars, MCMC and NumPyro, so not all examples are implemented.
