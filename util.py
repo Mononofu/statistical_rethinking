@@ -2,7 +2,6 @@ import numpy as np
 import polars as pl
 
 def line_hist(data, bins=16):
-    #     print('got', data)
     bars = " ▁▂▃▄▅▆▇█"
     n, _ = np.histogram(data, bins=bins)
     n2 = n * (len(bars) - 1) // (max(n))
