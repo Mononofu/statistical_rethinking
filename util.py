@@ -30,3 +30,8 @@ def summarize(df: pl.DataFrame):
     summary = str(pl.concat(summaries, how="horizontal"))
     summary = summary[summary.index("\n") + 1 :]  # Skip initial "shape: (...)" header.
     return f"[pl.DataFrame of shape {df.shape}:\n{summary}"
+
+
+def covariance(df: pl.DataFrame):
+    cov = np.cov(np.stack([df[c] for c in df.columns], axis=0)) 
+    return pl.DataFrame({'name': df.columns, **{c: row for c, row in zip(df.columns, cov)}} )
