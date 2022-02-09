@@ -4,7 +4,12 @@ import tabulate
 
 tabulate.PRESERVE_WHITESPACE = True
 
-def line_hist(data, bins=16): 
+def line_hist(data, bins=16):
+    try:
+        data[0] + 1
+    except TypeError:
+        return ''
+
     bars = " ▁▂▃▄▅▆▇█"
     n, _ = np.histogram(data, bins=bins)
     n2 = n * (len(bars) - 1) // (max(n))
